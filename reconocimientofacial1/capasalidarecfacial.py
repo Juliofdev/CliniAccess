@@ -2,10 +2,10 @@ import cv2 as cv
 import os
 import imutils
 
-# BASE DIR → carpeta donde está tu script .py
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Carpeta Data (relativa a tu proyecto)
+
 dataRuta = os.path.join(BASE_DIR, "Data")
 listaData = os.listdir(dataRuta)
 
@@ -14,13 +14,12 @@ modeloRuta = os.path.join(BASE_DIR, "EntrenamientoEigenFaceRecognizer.xml")
 entrenamientoEigenFaceRecognizer = cv.face.EigenFaceRecognizer_create()
 entrenamientoEigenFaceRecognizer.read(modeloRuta)
 
-# Haarcascade (debes ponerlo dentro de tu proyecto)
+# Haarcascade
 cascadeRuta = os.path.join(BASE_DIR, "haarcascade_frontalface_default.xml")
 ruidos = cv.CascadeClassifier(cascadeRuta)
 
-# Video fuente (colocar el video dentro del proyecto)
-videoRuta = os.path.join(BASE_DIR, "videoauron.mp4")
-camara = cv.VideoCapture(videoRuta)
+# Video fuente
+camara = cv.VideoCapture(0)
 
 while True:
     respuesta, captura = camara.read()

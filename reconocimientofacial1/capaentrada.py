@@ -13,7 +13,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 dataRuta = os.path.join(BASE_DIR, "Data")
 
 # Carpeta donde se guardarán las fotos del modelo
-modelo = "Rostroauron"
+modelo = "RostrosUsuario"
 rutaCompleta = os.path.join(dataRuta, modelo)
 
 # Crear carpetas si no existen
@@ -32,7 +32,7 @@ ruidos = cv.CascadeClassifier(clasificadorRuta)
 # INICIAR CÁMARA
 # -------------------------
 
-camara = cv.VideoCapture("videoauron.mp4")
+camara = cv.VideoCapture(0)
 id = 0
 
 while True:
